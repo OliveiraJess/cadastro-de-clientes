@@ -1,0 +1,49 @@
+@import "./variaveis.css";
+
+.button {
+    border-style    : none;
+    height          : 40px;
+    padding         : 6px 12px;
+    background-color: var(--preto);
+    color           : var(--branco);
+    font-size       : 1rem;
+    cursor          : pointer;
+    transition      : box-shadow .6s ease;
+}
+
+.button.blue {
+    background-color: var(--verde-claro);
+}
+
+button.green {
+    background-color: var(--verde-vivo);
+}
+
+button.red {
+    background-color: var(--vermelho);
+}
+
+.button:hover {
+    box-shadow: inset 200px 0 0 var(--primary);
+}
+
+@media(max-width:480px) {
+    .button.mobile {
+        color        : transparent;
+        font-size    : 0;
+        width        : 50px;
+        height       : 50px;
+        border-radius: 50%;
+        position     : fixed;
+        top          : 90vh;
+        left         : 80vw;
+    }
+
+    .button.mobile::before {
+        content  : "+";
+        color    : var(--preto);
+        font-size: 2rem;
+        width    : 100%;
+        height   : 100%;
+    }
+}
