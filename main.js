@@ -7,6 +7,7 @@ const closeModal = () => document.getElementById('modal')
     .classList.remove('active')
 
 
+    
 // Eventos
 document.getElementById('cadastrarCliente')
     .addEventListener('click', openModal)
