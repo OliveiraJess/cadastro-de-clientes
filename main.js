@@ -2,15 +2,16 @@
 
 //abrir modal
 const openModal = () => document.getElementById('modal')
-    .classList.add('active')
+    .classList.add('active');
 
 //fechar modal
-const closeModal = () => document.getElementById('modal')
-    .classList.remove('active')
-
+const closeModal = () => {
+    clearFields();
+    document.getElementById('modal').classList.remove('active');
+}
 
 const tempClient = {
-    nome: "Welinton",
+    nome: "Ana",
     email: "exemplo@gmail.com",
     celular: "48988880000",
     cidade: "Orleans"
@@ -18,10 +19,10 @@ const tempClient = {
 
 // ?? quer dizer: se não existir x retorna y 
 //getItem tras informações do localStorage 
-const getLocalStorage = () => JSON.parse(localStorage.getItem('db_client')) ?? []
+const getLocalStorage = () => JSON.parse(localStorage.getItem('db_client')) ?? [];
 
 //setItem pega informações do localStorage
-const setLocalStorage = (dbClient) => localStorage.setItem('db_client', JSON.stringify(dbClient))
+const setLocalStorage = (dbClient) => localStorage.setItem('db_client', JSON.stringify(dbClient));
 
 //delete/deleta
 const deleteClient = (index) => {
@@ -49,9 +50,40 @@ const createClient = (client) => {
     setLocalStorage(dbClient);
 }
 
+//INTERAÇÃO COM O LAYOUT
+
+//verifica se os campos foram preenchidos
+const isValidFields = () => {
+    //reportValidity retorna true caso todos os requisitos do html forem atendidos
+    return document.getElementById('form').reportValidity();
+}
+
+//limpar formulario do modal
+const clearFields = () => {
+    const fields = document.querySelectorAll('.modal-field');
+    fields.forEach(field => field.value = "");
+}
+
+//salvar cliente
+const saveClient = () => {
+    if (isValidFields()) {
+        const client = {
+            nome: document.getElementById('nome').value,
+            email: document.getElementById('email').value,
+            celular: document.getElementById('celular').value,
+            cidade: document.getElementById('cidade').value
+        }
+        createClient(client);
+        closeModal();
+    }
+}
+
 // Eventos
 document.getElementById('cadastrarCliente')
-    .addEventListener('click', openModal)
+    .addEventListener('click', openModal);
 
 document.getElementById('modalClose')
-    .addEventListener('click', closeModal)
+    .addEventListener('click', closeModal);
+
+document.getElementById('salvar')
+    .addEventListener('click', saveClient);
