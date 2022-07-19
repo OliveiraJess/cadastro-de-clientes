@@ -10,7 +10,7 @@ const closeModal = () => document.getElementById('modal')
 
 
 const tempClient = {
-    nome: "Gustavo",
+    nome: "Welinton",
     email: "exemplo@gmail.com",
     celular: "48988880000",
     cidade: "Orleans"
@@ -23,22 +23,25 @@ const getLocalStorage = () => JSON.parse(localStorage.getItem('db_client')) ?? [
 //setItem pega informações do localStorage
 const setLocalStorage = (dbClient) => localStorage.setItem('db_client', JSON.stringify(dbClient))
 
-//read/ler o cliente
-const readClient = () => getLocalStorage()
+//delete/deleta
 
+//update/atualiza
+const updateClient = (index, client) => {
+    const dbClient = readClient();
+    dbClient[index] = client;
+    setLocalStorage(dbClient);
+}
+
+//read/ler o cliente
+const readClient = () => getLocalStorage();
 
 //create/cria/envia os dados
 const createClient = (client) => {
-    const dbClient = getLocalStorage()
+    const dbClient = getLocalStorage();
     //acrecenta cliente
-    dbClient.push(client)
-    setLocalStorage(dbClient)
+    dbClient.push(client);
+    setLocalStorage(dbClient);
 }
-
-
-//update/atualiza
-
-//delete/deleta
 
 // Eventos
 document.getElementById('cadastrarCliente')
