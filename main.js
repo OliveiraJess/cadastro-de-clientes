@@ -10,7 +10,7 @@ const closeModal = () => document.getElementById('modal')
 
 
 const tempClient = {
-    nome: "Jessica",
+    nome: "Gustavo",
     email: "exemplo@gmail.com",
     celular: "48988880000",
     cidade: "Orleans"
@@ -18,13 +18,14 @@ const tempClient = {
 
 // ?? quer dizer: se não existir x retorna y 
 //getItem tras informações do localStorage 
-function getLocalStorage() {
-    return JSON.parse(localStorage.getItem('db_client')) ?? []
-}
+const getLocalStorage = () => JSON.parse(localStorage.getItem('db_client')) ?? []
+
 //setItem pega informações do localStorage
-function setLocalStorage(dbClient) {
-    return localStorage.setItem('db_client', JSON.stringify(dbClient))
-}
+const setLocalStorage = (dbClient) => localStorage.setItem('db_client', JSON.stringify(dbClient))
+
+//read/ler o cliente
+const readClient = () => getLocalStorage()
+
 
 //create/cria/envia os dados
 const createClient = (client) => {
@@ -34,8 +35,6 @@ const createClient = (client) => {
     setLocalStorage(dbClient)
 }
 
-
-//read/ler
 
 //update/atualiza
 
