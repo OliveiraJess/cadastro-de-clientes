@@ -24,6 +24,12 @@ const getLocalStorage = () => JSON.parse(localStorage.getItem('db_client')) ?? [
 const setLocalStorage = (dbClient) => localStorage.setItem('db_client', JSON.stringify(dbClient))
 
 //delete/deleta
+const deleteClient = (index) => {
+    const dbClient = readClient();
+    //splice remove cliente
+    dbClient.splice(index, 1)
+    setLocalStorage(dbClient);
+}
 
 //update/atualiza
 const updateClient = (index, client) => {
@@ -38,7 +44,7 @@ const readClient = () => getLocalStorage();
 //create/cria/envia os dados
 const createClient = (client) => {
     const dbClient = getLocalStorage();
-    //acrecenta cliente
+    //push acrecenta cliente
     dbClient.push(client);
     setLocalStorage(dbClient);
 }
