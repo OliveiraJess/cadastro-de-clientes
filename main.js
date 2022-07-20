@@ -21,7 +21,7 @@ const setLocalStorage = (dbClient) => localStorage.setItem('db_client', JSON.str
 const deleteClient = (index) => {
     const dbClient = readClient();
     //splice remove cliente
-    dbClient.splice(index, 1)
+    dbClient.splice(index, 1);
     setLocalStorage(dbClient);
 }
 
@@ -66,9 +66,16 @@ const saveClient = () => {
             celular: document.getElementById('celular').value,
             cidade: document.getElementById('cidade').value
         }
-        createClient(client);
-        updateTable();
-        closeModal();
+        const index = document.getElementById('nome').dataset.index
+        if (index == 'new') {
+            createClient(client);
+            updateTable();
+            closeModal();
+        } else {
+            updateClient(index, client)
+            updateTable();
+            closeModal();
+        }
     }
 }
 
@@ -90,8 +97,8 @@ const createRow = (client, index) => {
 
 //limpar tabela 
 const clearTable = () => {
-    const rows = document.querySelectorAll('#tableClient>tbody tr')
-    rows.forEach(row => row.parentNode.removeChild(row))
+    const rows = document.querySelectorAll('#tableClient>tbody tr');
+    rows.forEach(row => row.parentNode.removeChild(row));
 }
 
 //atualizar a tabela
@@ -99,6 +106,41 @@ const updateTable = () => {
     const dbClient = readClient();
     clearTable();
     dbClient.forEach(createRow);
+}
+
+//preencher campos
+const fillFields = (client) => {
+    document.getElementById('nome').value = client.nome
+    document.getElementById('email').value = client.email
+    document.getElementById('celular').value = client.celular
+    document.getElementById('cidade').value = client.cidade
+    document.getElementById('nome').dataset.index = client.index
+}
+
+//editar cliente
+const editClient = (index) => {
+    const client = readClient()[index];
+    client.index = index
+    fillFields(client);
+    openModal();
+}
+
+//editar e deletar cliente na tabela
+const editDelete = (event) => {
+    if (event.target.type == 'button') {
+        const [action, index] = event.target.id.split('-');
+
+        if (action == 'edit') {
+            editClient(index);
+        } else {
+            const client = readClient()[index];
+            const response = confirm(`Deseja realmente excluir o cliente ${client.nome}`);
+            if (response) {
+                deleteClient(index);
+                updateTable();
+            }
+        }
+    }
 }
 
 updateTable();
@@ -112,3 +154,9 @@ document.getElementById('modalClose')
 
 document.getElementById('salvar')
     .addEventListener('click', saveClient);
+
+document.querySelector('#tableClient>tbody')
+    .addEventListener('click', editDelete)
+    
+document.getElementById('cancelar')
+    .addEventListener('click', closeModal)
