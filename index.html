@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/button.css">
     <link rel="stylesheet" href="css/records.css">
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/validate.css">
     <title>Cadastro de Clientes</title>
 </head>
 
@@ -47,6 +48,9 @@
                         <label for="nome" class="modal-label">Nome:</label>
                         <input type="text" id="nome" name="name" data-index="new" class="modal-field"
                             placeholder="Ex.: Jéssica de Oliveira" required>
+                        <span role="alert" id="nameError" aria-hidden="true">
+                            O campo nome deve ser preenchido.
+                        </span>
                     </div>
                     <div class="form-block">
                         <label for="email" class="modal-label">Email:</label>
@@ -75,6 +79,7 @@
         Copyright &copy; Jéssica.
     </footer>
     <script src="main.js" defer></script>
+    <script src="validate.js" defer></script>
 </body>
 
 </html>

@@ -1,0 +1,15 @@
+@import "./variaveis.css";
+
+#nameError {
+  display: none;
+  font-size: 0.8em;
+}
+
+#nameError.visible {
+  display: block;
+  color: var(--error);
+}
+
+input.invalid {
+  border-color: var(--error) !important;
+}
