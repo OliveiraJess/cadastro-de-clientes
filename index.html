@@ -43,11 +43,26 @@
                     <span class="modal-close" id="modalClose">&#10006;</span>
                 </header>
                 <form id="form" class="modal-form">
-                    <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome"
-                        required>
-                    <input type="email" id="email" class="modal-field" placeholder="E-mail" required>
-                    <input type="text" id="celular" class="modal-field" placeholder="Celular" required>
-                    <input type="text" id="cidade" class="modal-field" placeholder="Cidade" required>
+                    <div class="form-block">
+                        <label for="nome" class="modal-label">Nome:</label>
+                        <input type="text" id="nome" name="name" data-index="new" class="modal-field"
+                            placeholder="Ex.: Jéssica de Oliveira" required>
+                    </div>
+                    <div class="form-block">
+                        <label for="email" class="modal-label">Email:</label>
+                        <input type="email" id="email" name="email" class="modal-field"
+                            placeholder="example@example.com" required>
+                    </div>
+                    <div class="form-block">
+                        <label for="celular" class="modal-label">Celular:</label>
+                        <input type="number" id="celular" name="cel" class="modal-field" placeholder="(48) 98877-6655"
+                            required>
+                    </div>
+                    <div class="form-block">
+                        <label for="cidade" class="modal-label">Cidade:</label>
+                        <input type="text" id="cidade" name="city" class="modal-field" placeholder="Ex.: Orleans"
+                            required>
+                    </div>
                 </form>
                 <footer class="modal-footer">
                     <button id="salvar" class="button green">Salvar</button>

@@ -62,8 +62,16 @@
     padding        : 0 20px;
 }
 
+.form-block {
+    width:40%;
+}
+
+.modal-label {
+    font: inherit;
+}
+
 .modal-field {
-    width        : calc(50% - 10px);
+    width        : calc(100% - 10px);
     height       : 40px;
     outline-style: none;
     border-style : none;
@@ -102,5 +110,9 @@
 
     .modal-field {
         width: 100%;
+    }
+
+    .form-block {
+        width:100%;
     }
 }
