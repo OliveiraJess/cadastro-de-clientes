@@ -5,6 +5,16 @@
   font-size: 0.8em;
 }
 
+#emailError {
+  display: none;
+  font-size: 0.8em;
+}
+
+#emailError.visible {
+  display: block;
+  color: var(--error);
+}
+
 #nameError.visible {
   display: block;
   color: var(--error);
