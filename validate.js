@@ -8,7 +8,7 @@ function validate(event) {
   const name = document.getElementById("nome");
   const email = document.getElementById("email");
   const cell = document.getElementById("celular");
-
+  const city = document.getElementById("cidade");
 
   let valid = true;
 
@@ -34,6 +34,14 @@ function validate(event) {
     cell.classList.add("invalid");
     cellError.setAttribute("aria-hidden", false);
     cellError.setAttribute("aria-invalid", true);
+  }
+
+  if (!city.value) {
+    const cityError = document.getElementById("cityError");
+    cityError.classList.add("visible");
+    city.classList.add("invalid");
+    cityError.setAttribute("aria-hidden", false);
+    cityError.setAttribute("aria-invalid", true);
   }
 
   return valid;

@@ -15,6 +15,11 @@
   font-size: 0.8em;
 }
 
+#cityError {
+  display: none;
+  font-size: 0.8em;
+}
+
 #nameError.visible {
   display: block;
   color: var(--error);
@@ -26,6 +31,11 @@
 }
 
 #cellError.visible {
+  display: block;
+  color: var(--error);
+}
+
+#cityError.visible {
   display: block;
   color: var(--error);
 }
