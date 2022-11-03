@@ -1,46 +1,31 @@
 @import "./variaveis.css";
 
-#nameError {
-  display: none;
-  font-size: 0.8em;
-}
-
-#emailError {
-  display: none;
-  font-size: 0.8em;
-}
-
-#cellError {
-  display: none;
-  font-size: 0.8em;
-}
-
+#nameError,
+#emailError,
+#cellError,
 #cityError {
   display: none;
   font-size: 0.8em;
 }
 
-#nameError.visible {
-  display: block;
-  color: var(--error);
-}
-
-#emailError.visible {
-  display: block;
-  color: var(--error);
-}
-
-#cellError.visible {
-  display: block;
-  color: var(--error);
-}
-
+#nameError.visible,
+#emailError.visible,
+#cellError.visible,
 #cityError.visible {
   display: block;
   color: var(--error);
 }
 
-
 input.invalid {
   border-color: var(--error) !important;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+
+}
+input[type=number] {
+ -moz-appearance: textfield;
+ appearance: textfield;
+
 }
