@@ -10,15 +10,26 @@
   font-size: 0.8em;
 }
 
-#emailError.visible {
-  display: block;
-  color: var(--error);
+#cellError {
+  display: none;
+  font-size: 0.8em;
 }
 
 #nameError.visible {
   display: block;
   color: var(--error);
 }
+
+#emailError.visible {
+  display: block;
+  color: var(--error);
+}
+
+#cellError.visible {
+  display: block;
+  color: var(--error);
+}
+
 
 input.invalid {
   border-color: var(--error) !important;
