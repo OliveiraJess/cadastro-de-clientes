@@ -20,7 +20,7 @@ input.invalid {
   border-color: var(--error) !important;
 }
 
-input[type=number]::-webkit-inner-spin-button {
+/* input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 
 }
@@ -28,4 +28,4 @@ input[type=number] {
  -moz-appearance: textfield;
  appearance: textfield;
 
-}
+} */

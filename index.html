@@ -62,8 +62,8 @@
                     </div>
                     <div class="form-block">
                         <label for="celular" class="modal-label">Celular:</label>
-                        <input type="number" id="celular" name="cel" class="modal-field" placeholder="(48) 98877-6655"
-                            required>
+                        <input type="tel" id="celular" name="cel" class="modal-field" maxlength="15"
+                        placeholder="(48) 98877-6655" onkeyup="handleCell(event)" required>
                         <span role="alert" id="cellError" aria-hidden="true">
                             O campo celular deve ser preenchido.
                         </span>
