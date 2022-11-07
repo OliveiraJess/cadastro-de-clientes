@@ -7,11 +7,13 @@
 <img height="400px" src="https://github.com/OliveiraJess/cadastro-de-clientes/blob/main/img/imageAplicacao.png" alt="Aplicação" />
 </div>
 
-<p align="center">Nesse projeto temos um cadastro de clientes com as features criar, ler, atualizar e excluir. </p>
+<p align="center">Nesse projeto temos um cadastro de clientes com as features criar, ler, editar e excluir. </p>
 
 <h2>🚀 Objetivo</h2>
 
 <p>Feito pra testar meus conhecimentos em Javascript.</p>
+<p>Nele foi utilizado o createElement e o innerHTML para criar uma tabela com os clientes e o forEach para a manipulação dos array.</p>
+<p>O LocalStorage foi utilizado como banco de dados para armazenar as informações recebidas e mantê-las ao atualizar a página</p>
 
 <h2>🔧 Instalação</h2>
 
@@ -23,9 +25,14 @@
 
 <h2>⚙️ Utilizando</h2>
 
-<p>Em breve...</p>
+<p>Temos as seguintes features abaixo</p>
 
-Deploy na Vercel: <a href="https://vercel.com/oliveirajess/cadastro-de-clientes/" >Cadastro de Clientes.</a>
+* Criar: para criar um cliente você deve clicar em "cadastrar cliente" (em "+" caso esteja acessando pelo celular) e preencher todos os campos, após clicar no botão enviar.
+* Ler: você consegue ver os clientes que foram criados na tela inicial.
+* Editar: para editar basta clicar no botão editar, fazer suas alterações e clicar no botão salvar.
+* Excluir: para excluir um cliente basta clicar no botão excluir e clicar em "ok" no alert que irá aparecer.
+
+Deploy na Vercel: <a href="https://cadastro-de-clientes-black.vercel.app/" >Cadastro de Clientes.</a>
 
 <h2>🤝 Contribuindo </h2>
 
@@ -33,4 +40,4 @@ Deploy na Vercel: <a href="https://vercel.com/oliveirajess/cadastro-de-clientes/
 * Dê estrela no projeto ⭐️
 
 <h4 align="center">🚧 Em construção 🚧 </h4>
-<p>Falta a etapa de validação de formulário </p>
+
