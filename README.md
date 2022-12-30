@@ -1,4 +1,4 @@
-<h1  align="center">Filtro</h1>
+<h1  align="center">Cadastro de Clientes</h1>
 <div align="center">
 <img src="https://img.shields.io/static/v1?label=Projeto&message=Javascript&color=F1E05A&style=for-the-badge&logo=ghost"/>
 </div>
